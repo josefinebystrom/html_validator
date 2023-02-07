@@ -1,6 +1,7 @@
 #!/bin/python3
 import re
 
+
 def validate_html(html):
     '''
     This function performs a limited version of html validation by checking whether every opening tag has a corresponding closing tag.
@@ -23,11 +24,11 @@ def validate_html(html):
     stack = []
     if len(html) == 0:
         return True
-    while index < len(tags) and balanced == True:
+    while index < len(tags) and balanced is True:
         if len(tags) == 0:
             return True
         tag = tags[index]
-        endtag = str('</'+ tag[1::])
+        endtag = str('</' + tag[1::])
         if '/' not in tag:
             stack.append(tag)
             index += 1
@@ -40,6 +41,7 @@ def validate_html(html):
             index += 1
     if len(stack) == 0:
         return True
+
 
 def _extract_tags(html):
     '''
