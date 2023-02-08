@@ -33,7 +33,7 @@ def validate_html(html):
     balanced = True
     if not tags:
         return False
-    while index < len(tags)and balanced:
+    while index < len(tags) and balanced:
         tag = tags[index]
         tagname = tag[1:-1]
         if '/' not in tag:
