@@ -1,5 +1,4 @@
 #!/bin/python3
-import re
 
 
 def validate_html(html):
@@ -68,8 +67,8 @@ def _extract_tags(html):
     taglist = []
     for i in range(len(html)):
         if html[i] == '<':
-            newstring=html[i:]
-            tag=''
+            newstring = html[i:]
+            tag = ''
             for char in newstring:
                 if char != '>' and not char.isspace():
                     tag += char
