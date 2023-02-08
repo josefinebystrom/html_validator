@@ -65,5 +65,16 @@ def _extract_tags(html):
     >>> _extract_tags('Python <strong>rocks</strong>!')
     ['<strong>', '</strong>']
     '''
-    tags = re.findall(r'<[^>]+>', html)
-    return tags
+    taglist = []
+    for i in range(len(html)):
+        if html[i] == '<':
+            newstring=html[i:]
+            tag=''
+            for char in newstring:
+                if char != '>' and not char.isspace():
+                    tag += char
+                else:
+                    tag += '>'
+                    break
+            taglist.append(tag)
+    return taglist
